@@ -11,7 +11,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     @Override
     public int num2(int num2) {
-        return num2 ;
+        return num2;
     }
 
     @Override
