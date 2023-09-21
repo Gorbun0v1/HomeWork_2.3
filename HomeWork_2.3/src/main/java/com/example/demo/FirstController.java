@@ -18,7 +18,7 @@ public class FirstController {
 
     @GetMapping
     public String showHelloCalculator() {
-        return "Добро пожаловать в мой калькулятор";
+        return "Добро пожаловать в калькулятор";
     }
 
     @GetMapping("/plus")
