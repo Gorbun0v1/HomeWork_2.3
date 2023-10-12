@@ -4,36 +4,37 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
-    @Override
-    public int num1(int num1) {
-        return num1;
+
+    public void checkParam(Integer num1, Integer num2) {
+        if (num1 == null || num2 == null) {
+            throw new IllegalArgumentException("Какой-то параметр не передан");
+        }
     }
 
     @Override
-    public int num2(int num2) {
-        return num2 ;
+    public String sumNumbers(Integer num1, Integer num2) {
+        checkParam(num1, num2);
+        return String.format("%d + %d = %d.", num1, num2, num1 + num2);
     }
 
     @Override
-    public int sumNumbers(int num1, int num2) {
-        return num1 + num2;
+    public String minNumbers(Integer num1, Integer num2) {
+        checkParam(num1, num2);
+        return String.format("%d - %d = %d.", num1, num2, num1 - num2);
     }
 
     @Override
-    public int minNumbers(int num1, int num2) {
-        return num1 - num2;
+    public String multiNumbers(Integer num1, Integer num2) {
+        checkParam(num1, num2);
+        return String.format("%d * %d = %d.", num1, num2, num1 * num2);
     }
 
     @Override
-    public int multiNumbers(int num1, int num2) {
-        return num1 * num2;
-    }
-
-    @Override
-    public int divideNumbers(int num1, int num2) {
+    public String divideNumbers(Integer num1, Integer num2) {
+        checkParam(num1, num2);
         if (num2 == 0) {
             throw new ArithmeticException();
         }
-        return num1 / num2;
+        return String.format("%d / %d = %d.", num1, num2, num1 / num2);
     }
 }
