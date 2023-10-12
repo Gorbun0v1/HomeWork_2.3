@@ -22,26 +22,26 @@ public class FirstController {
     }
 
     @GetMapping("/plus")
-    public String sumCalculator(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        int sum = calculatorService.sumNumbers(num1, num2);
+    public String sumCalculator(@RequestParam(value = "num1", required = false) Integer num1, @RequestParam(value = "num2", required = false) Integer num2) {
+        String sum = calculatorService.sumNumbers(num1, num2);
         return String.format("%d + %d = %d", num1, num2, num1 + num2);
     }
 
     @GetMapping("/minus")
     public String minCalculator(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        int sum = calculatorService.minNumbers(num1, num2);
+        String sum = calculatorService.minNumbers(num1, num2);
         return String.format("%d - %d = %d", num1, num2, num1 - num2);
     }
 
     @GetMapping("/multiply")
     public String multiCalculator(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        int sum = calculatorService.multiNumbers(num1, num2);
+        String sum = calculatorService.multiNumbers(num1, num2);
         return String.format("%d * %d = %d", num1, num2, num1 * num2);
     }
 
     @GetMapping("/divide")
     public String divideCalculator(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        int sum = calculatorService.divideNumbers(num1, num2);
+        String sum = calculatorService.divideNumbers(num1, num2);
         return String.format("%d / %d = %d", num1, num2, num1 / num2);
     }
 

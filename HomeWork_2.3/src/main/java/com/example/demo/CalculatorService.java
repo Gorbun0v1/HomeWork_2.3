@@ -1,11 +1,9 @@
 package com.example.demo;
 
 public interface CalculatorService {
-    int num1(int num1);
-    int num2(int num2);
-    int sumNumbers(int num1, int num2);
-    int minNumbers(int num1, int num2);
-    int multiNumbers(int num1, int num2);
-    int divideNumbers(int num1, int num2);
+    String sumNumbers(Integer num1, Integer num2);
+    String minNumbers(Integer num1, Integer num2);
+    String multiNumbers(Integer num1, Integer num2);
+    String divideNumbers(Integer num1, Integer num2);
 
 }
